@@ -32,6 +32,7 @@ import { AddTeacherComponent } from './add-teacher/add-teacher.component';
 import { PapersDemandDashboardComponent } from './papers-demand-dashboard/papers-demand-dashboard.component';
 import { SchoolAdminManagementDashboardComponent } from './school-admin-management-dashboard/school-admin-management-dashboard.component';
 import { ModifyGroupComponent } from './modify-group/modify-group.component';
+import { TeacherSidebarComponent } from './shared/teacher-sidebar/teacher-sidebar.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { ModifyGroupComponent } from './modify-group/modify-group.component';
     PapersDemandDashboardComponent,
     SchoolAdminManagementDashboardComponent,
     ModifyGroupComponent,
+    TeacherSidebarComponent,
   ],
   imports: [
     BrowserModule,

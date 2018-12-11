@@ -1,0 +1,43 @@
+{
+  "name": "groupe",
+  "plural": "groupes",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "required": true
+    },
+    "nomgroupe": {
+      "type": "string",
+      "required": true
+    },
+    "filiale": {
+      "type": "string",
+      "required": true
+    },
+    "niveau": {
+      "type": "string",
+      "required": true
+    },
+    "anneeuniversitaire": {
+      "type": "number",
+      "required": true
+    },
+    "numerogroupe": {
+      "type": "number",
+      "required": true
+    },
+    "owner_id": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
