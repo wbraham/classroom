@@ -16,11 +16,19 @@
                             </div>-->
                             <form class="register-form">
                                 <label>Email</label>
-                                <input [(ngModel)]="emaill" name="emaill" id="emaill" type="text" class="form-control" placeholder="Email">
+                                <input [(ngModel)]="emaill" name="emaill" id="emaill" id="emaill" type="text" class="form-control" placeholder="Email" [ngModelOptions]="{standalone: true}">
 
                                 <label>Mot de passe</label>
-                                <input [(ngModel)]="pass" name="pass" type="password" class="form-control" placeholder="Mot de passe">
-                                <button (click)="login()" class="btn btn-danger btn-block btn-round">Login</button>
+                                <input [(ngModel)]="pass" name="pass" id="pass" type="password" class="form-control" placeholder="Mot de passe" [ngModelOptions]="{standalone: true}">
+                                <div class="inputGroup inputGroup1">
+                                    <label name="isadmin" id="isadmin" for="email1">Je suis :</label>
+                                  </div>
+                                  <mat-radio-group id="role">
+                                    <mat-radio-button value="admin">Ecole&nbsp;&nbsp;&nbsp;</mat-radio-button>
+                                    <mat-radio-button value="teacher">Professeur&nbsp;&nbsp;&nbsp;</mat-radio-button>
+                                    <mat-radio-button value="student">Etudiant</mat-radio-button>
+                                  </mat-radio-group><br>
+                                  <button (click)="login()" class="btn btn-danger btn-block btn-round">Login</button>
                             </form>
                             <div class="forgot">
                                 <button [routerLink]="['/forgot-password']" class="btn btn-link btn-danger">Mot de passe oublié?</button>

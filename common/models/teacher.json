@@ -7,10 +7,6 @@
     "validateUpsert": true
   },
   "properties": {
-    "id_teacher": {
-      "type": "number",
-      "required": true
-    },
     "email": {
       "type": "string",
       "required": true
@@ -20,8 +16,7 @@
       "required": true
     },
     "phone": {
-      "type": "number",
-      "required": true
+      "type": "number"
     },
     "group_id": {
       "type": "number"

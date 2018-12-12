@@ -33,6 +33,9 @@ import { PapersDemandDashboardComponent } from './papers-demand-dashboard/papers
 import { SchoolAdminManagementDashboardComponent } from './school-admin-management-dashboard/school-admin-management-dashboard.component';
 import { ModifyGroupComponent } from './modify-group/modify-group.component';
 import { TeacherSidebarComponent } from './shared/teacher-sidebar/teacher-sidebar.component';
+import {MatRadioModule} from '@angular/material/radio';
+import { ClassroomService } from './shared/classroom.service'
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -70,8 +73,10 @@ import { TeacherSidebarComponent } from './shared/teacher-sidebar/teacher-sideba
     FormsModule,
     RouterModule,
     AppRoutingModule,
+    MatRadioModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [ClassroomService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

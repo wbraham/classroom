@@ -41,10 +41,6 @@
     "photo": {
       "type": "string"
     },
-    "id_student": {
-      "type": "number",
-      "required": true
-    },
     "owner_id": {
       "type": "number",
       "required": true
