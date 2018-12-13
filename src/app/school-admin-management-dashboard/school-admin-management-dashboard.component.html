@@ -7,23 +7,23 @@
                     <div class="text-missing">
                         <h5 class="text-muted">Les Groupes : </h5>
                     </div><br><br>
-                    <ul class="list-unstyled follows">
+                    <ul class="list-unstyled follows" *ngFor="let group of myGroups">
                         <li>
                             <div class="row">
                                 <div class="col-md-2 col-3">
                                     <img src="../assets/img/placeholder.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
                                 </div>
                                 <div class="col-md-6 col-6 description">
-                                    <h5>5eme G.Info Groupe 1<br>
-                                    <small>Génie Informatique - 5eme année</small>
+                                    <h5>{{group.split('$#')[0]}}<br>
+                                    <small>{{group.split('$#')[1]}} - {{group.split('$#')[2]}}eme année</small>
                                     </h5>
                                 </div>
                                 <li class="nav-item ">
                                     <div ngbDropdown class="dropdown" placement="bottom-left">
                                     <a class="nav-link" id="dropdownBasic1" ngbDropdownToggle><i class="nc-icon nc-settings" aria-hidden="true"></i></a>
                                         <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="dropdown-danger dropdown-menu-right">
-                                                <a class="dropdown-item" [routerLink]="['/modify-group']">Modifier</a>
-                                                <a class="dropdown-item">Supprimer</a>
+                                                <a class="dropdown-item" (click)="modifyGroup()">Modifier</a>
+                                                <a class="dropdown-item" (click)="supprimerGroup()">Supprimer</a>
                                         </div>
                                     </div>
                                 </li>
@@ -39,7 +39,7 @@
                       <li>
                           <div class="row">
                               <div class="col-md-2 col-3">
-                                  <img src="../assets/img/faces/ayo-ogunseinde-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                                  <img src="../assets/img/placeholder.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
                               </div>
                               <div class="col-md-6 col-4 description">
                                   <h5>Imed Boudriga<br>
@@ -68,7 +68,7 @@
                     <li>
                         <div class="row">
                             <div class="col-md-2 col-3">
-                                <img src="../assets/img/faces/ayo-ogunseinde-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                                <img src="../assets/img/placeholder.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
                             </div>
                             <div class="col-md-6 col-4 description">
                                 <h5>Walid Braham<br>

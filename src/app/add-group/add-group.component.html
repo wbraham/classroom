@@ -9,33 +9,24 @@
                   <img src="./assets/img/placeholder.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
               </div>
               <div class="name">
-                  <h4 class="title">Nom Ecole<br /></h4>
+                  <h4 class="title">{{ admin_uni_name }}<br /></h4>
               </div>
           </div>
           <div class="row">
-              <div class="col-md-6 ml-auto mr-auto text-center">
-                  <p>Ville. </p>
-                  <br />
-              </div>
               <div class="col-md-12 col-sm-12">
               <h3>Ajouter un groupe :</h3><br><br>
+              <form>
               <div class="row price-row">
-                  <div class="col-md-4">
-                      <h6>Filiale / Spécialité <span class="icon-danger">*</span></h6>
+                  <div class="col-md-6">
+                      <h6>Filiale <span class="icon-danger">*</span></h6>
                       <div class="input-group border-input">
-                          <input type="text" value="" placeholder="Classe ou filiale" class="form-control border-input">
+                          <input [(ngModel)]="filiale" name="filiale" [ngModelOptions]="{standalone: true}" type="text" placeholder="Classe ou filiale" class="form-control border-input">
                       </div>
                   </div>
-                  <div class="col-md-4">
-                    <h6>Spécialité <span class="icon-danger">*</span></h6>                            
-                    <div class="input-group border-input">
-                          <input type="text" value="" placeholder="Spécialité" class="form-control border-input">
-                      </div>
-                  </div>
-                  <div class="col-md-4">
-                      <h6>Niveau d'études<span class="icon-danger">*</span></h6>                            
+                  <div class="col-md-6">
+                      <h6>Niveau d'études&nbsp;<span class="icon-danger">*</span></h6>                            
                       <div class="input-group border-input">
-                            <input type="number" value="" placeholder="Niveau d'études" class="form-control border-input">
+                            <input [(ngModel)]="niveau" name="niveau" [ngModelOptions]="{standalone: true}" type="number" placeholder="Niveau d'études" class="form-control border-input">
                         </div>
                   </div>
               </div><br><br>
@@ -43,27 +34,28 @@
                 <div class="col-md-4">
                     <h6>Année universitaire <span class="icon-danger">*</span></h6>
                     <div class="input-group border-input">
-                        <input type="number" min="2000" max="2099" step="1" value="2018" class="form-control border-input"/>                    </div>
+                        <input [(ngModel)]="anneeuniversitaire" name="anneeuniversitaire" [ngModelOptions]="{standalone: true}" type="number" min="2000" max="2099" step="1" class="form-control border-input"/>                    </div>
                 </div>
                 <div class="col-md-4">
                   <h6>Numéro du groupe <span class="icon-danger">*</span></h6>
                   <div class="input-group border-input">
-                      <input type="number" value="" placeholder="Numéro du groupe" class="form-control border-input">
+                      <input [(ngModel)]="numerogroupe" name="numerogroupe" [ngModelOptions]="{standalone: true}" type="number"  placeholder="Numéro du groupe" class="form-control border-input">
                   </div>
                 </div>
                 <div class="col-md-4">
                   <h6>Nom du groupe <span class="icon-danger">*</span></h6>
                   <div class="input-group border-input">
-                      <input type="text" value="" placeholder="Nom du groupe" class="form-control border-input">
+                      <input [(ngModel)]="nomgroupe" name="nomgroupe" [ngModelOptions]="{standalone: true}" type="text" placeholder="Nom du groupe" class="form-control border-input">
                   </div>
                 </div>
             </div>
+            <br><br><br><br>
+            <div class="text-center">
+                <button (click)="addGroup()" class="btn btn-outline-default btn-round"><i class="fa fa-cog"></i>Ajouter</button>
             </div>
-          </div>
-          <br><br><br><br>
-          <div class="text-center">
-                <button class="btn btn-outline-default btn-round"><i class="fa fa-cog"></i>Ajouter</button>
+        </form>
             </div>
       </div>
   </div>
+</div>
 </div>

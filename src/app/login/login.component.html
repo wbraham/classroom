@@ -6,14 +6,6 @@
                     <div class="col-lg-4 col-sm-6 mr-auto ml-auto">
                         <div class="card card-register">
                             <h3 class="title">Connexion à Classroom</h3>
-                            <!--<div class="social-line text-center">
-                                <a href="#pablo" class="btn btn-neutral btn-facebook btn-just-icon">
-                                    <i class="fa fa-facebook-square"></i>
-                                </a>
-                                <a href="#pablo" class="btn btn-neutral btn-google btn-just-icon">
-                                    <i class="fa fa-google-plus"></i>
-                                </a>
-                            </div>-->
                             <form class="register-form">
                                 <label>Email</label>
                                 <input [(ngModel)]="emaill" name="emaill" id="emaill" id="emaill" type="text" class="form-control" placeholder="Email" [ngModelOptions]="{standalone: true}">
@@ -21,14 +13,15 @@
                                 <label>Mot de passe</label>
                                 <input [(ngModel)]="pass" name="pass" id="pass" type="password" class="form-control" placeholder="Mot de passe" [ngModelOptions]="{standalone: true}">
                                 <div class="inputGroup inputGroup1">
-                                    <label name="isadmin" id="isadmin" for="email1">Je suis :</label>
-                                  </div>
-                                  <mat-radio-group id="role">
-                                    <mat-radio-button value="admin">Ecole&nbsp;&nbsp;&nbsp;</mat-radio-button>
-                                    <mat-radio-button value="teacher">Professeur&nbsp;&nbsp;&nbsp;</mat-radio-button>
-                                    <mat-radio-button value="student">Etudiant</mat-radio-button>
-                                  </mat-radio-group><br>
-                                  <button (click)="login()" class="btn btn-danger btn-block btn-round">Login</button>
+                                <label name="isadmin" id="isadmin" for="email1">Je suis :</label>
+                                </div>
+                                <mat-radio-group class="example-radio-group" [(ngModel)]="roleChoisi" [ngModelOptions]="{standalone: true}">
+                                <mat-radio-button class="example-radio-button" *ngFor="let role of roles" [value]="role">
+                                    {{role}} &nbsp;&nbsp;&nbsp;
+                                </mat-radio-button>
+                                </mat-radio-group>
+                                <br>
+                                <button (click)="login()" class="btn btn-danger btn-block btn-round">Login</button>
                             </form>
                             <div class="forgot">
                                 <button [routerLink]="['/forgot-password']" class="btn btn-link btn-danger">Mot de passe oublié?</button>

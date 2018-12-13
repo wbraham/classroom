@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LocationStrategy, PlatformLocation, Location } from '@angular/common';
+import { ClassroomService } from 'app/shared/classroom.service';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -9,8 +10,10 @@ import { LocationStrategy, PlatformLocation, Location } from '@angular/common';
 export class AdminDashboardComponent implements OnInit {
 
   constructor( public location: Location) { }
+  admin_uni_name = '';
 
   ngOnInit() {
+    this.admin_uni_name = localStorage.getItem('admin_uni_name');
   }
 
   isAdmin(){

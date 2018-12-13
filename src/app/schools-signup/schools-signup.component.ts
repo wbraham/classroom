@@ -20,12 +20,22 @@ export class SchoolsSignupComponent implements OnInit {
 
   signUpAdmin(){
       if (this.password.length>=8 && this.password === this.password2){
-      this.classroomService.addAdmin(this.nomEcole,this.phone,this.email,this.password)        
+      this.classroomService.addUserToUserTable(this.email,this.password)        
       .subscribe(
         (res)=>{
             console.log(res);
-            window.alert("Vous pouvez vous connecter avec votre compte maintenant");
-            window.location.href = ("login");
+            this.classroomService.addAdmin(this.nomEcole,this.phone,this.email,this.password)        
+            .subscribe(
+              (res)=>{
+                  console.log(res);
+                  window.alert("Vous pouvez vous connecter avec votre compte maintenant");
+                  window.location.href = ("login");
+              } ,
+              (error) => {
+                console.log(error);
+                window.alert("Ce compte existe déjaaa");
+              }
+            );
         } ,
         (error) => {
           console.log(error);
